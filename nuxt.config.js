@@ -7,16 +7,26 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'IDEPead - UNIFRAN\'s homepage' }
+      { hid: 'description', name: 'description', content: 'IDEPead - UNIFRAN\'s homepage' },
+      { name: 'apple-mobile-web-app-title', content: 'UNIFRAN' },
+      { name: 'application-name', content: 'UNIFRAN' },
+      { name: 'msapplication-TileColor', content: '#2d4c72' },
+      { name: 'msapplication-TileImage', content: '/mstile-144x144.png' },
+      { name: 'theme-color', content: '#2d4c72' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
+      { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
+      { rel: 'manifest', href: '/manifest.json' },
+      { rel: 'mask-icon', href: '/safari-pinned-tab1.svg', color: '#e53249' }
     ]
   },
   /*
   ** Customize the progress bar color
   */
-  loading: { color: '#3B8070' },
+  loading: { color: '#E53249' },
   /*
   ** Build configuration
   */
