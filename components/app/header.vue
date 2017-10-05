@@ -32,4 +32,10 @@
     small
       font-size .4em
       vertical-align text-top
+@media (max-width: 600px)
+  .logos
+    flex-wrap wrap
+  .idepead,
+  .unifran
+    width 250px
 </style>

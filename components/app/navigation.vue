@@ -31,14 +31,28 @@
   font-size 1.5em
   padding .5em
   transition .2s all ease-in-out
-  &:hover
-    background #E53249
-    color black
+  &:hover,
+  &.nuxt-link-exact-active
+    background #252525
+    color white
   &.invert
     background #E53249
     color black
     &:hover
+      background #252525
       color white
-      background none
-
+    &.nuxt-link-exact-active
+      background #252525
+      color white
+@media (max-width: 600px)
+  .navigation--list
+    flex-wrap wrap
+  .navigation--item
+    width 50%
+@media (max-width: 300px)
+  .navigation--list
+    flex-direction column
+  .navigation--item
+    width 100%
 </style>
+
