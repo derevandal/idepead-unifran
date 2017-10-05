@@ -38,9 +38,9 @@ module.exports = {
   /*
   ** Plugins
   */
-  // plugins: [
-  //   { src: '~plugins/gtm.js', ssr: false }
-  // ],
+  plugins: [
+    { src: '~plugins/gtm.js', ssr: false }
+  ],
   /*
   ** Build configuration
   */
