@@ -36,6 +36,12 @@ module.exports = {
     'normalize-styl'
   ],
   /*
+  ** Plugins
+  */
+  plugins: [
+    { src: '~plugins/gtm.js', ssr: false }
+  ]
+  /*
   ** Build configuration
   */
   build: {
