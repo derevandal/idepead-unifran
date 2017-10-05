@@ -17,10 +17,11 @@ export default ({ app }) => {
   /*
   ** Every time the route changes (fired on initialization too)
   */
-  // app.router.afterEach((to, from) => {
-  //   if ( _gat && _gat._getTracker ) {
-  //     ga('set', 'page', to.fullPath)
-  //     ga('send', 'pageview')
-  //   }
-  // })
+  app.router.afterEach((to, from) => {
+    // if ( _gat && _gat._getTracker ) {
+    //   ga('set', 'page', to.fullPath)
+    //   ga('send', 'pageview')
+    // }
+    console.log(to, from)
+  })
 }
