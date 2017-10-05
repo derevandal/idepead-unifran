@@ -40,7 +40,7 @@ module.exports = {
   */
   plugins: [
     { src: '~plugins/gtm.js', ssr: false }
-  ]
+  ],
   /*
   ** Build configuration
   */
