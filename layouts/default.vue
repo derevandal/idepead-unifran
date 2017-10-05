@@ -1,27 +1,53 @@
-<template>
-  <div>
-    <nuxt/>
-  </div>
+<template lang="pug">
+  div.container.container--app
+    app-header
+    section.section--middle.container
+      app-navigation
+      nuxt
+    app-footer
 </template>
 
-<style>
-html {
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
+<script>
+import appHeader from '~/components/app/header.vue'
+import appNavigation from '~/components/app/navigation.vue'
+import appFooter from '~/components/app/footer.vue'
 
-*, *:before, *:after {
-  box-sizing: border-box;
-  margin: 0;
+export default {
+  components: {
+    appHeader,
+    appNavigation,
+    appFooter
+  }
 }
+</script>
 
-.button--green {
+<style lang="stylus">
+html
+  font-family 'Roboto', sans-serif
+  font-size 16px
+  -ms-text-size-adjust 100%
+  -webkit-text-size-adjust 100%
+  -moz-osx-font-smoothing grayscale
+  -webkit-font-smoothing antialiased
+  background-color #EFEFEF
+  color #252525
+
+*, *:before, *:after
+  box-sizing border-box
+  margin 0
+
+.container
+  display flex
+  width 100%
+.container--app
+  max-width 900px
+  margin 1.5em auto
+  flex-direction column
+.section--middle
+  flex-direction column
+
+
+/* .button--green {
   display: inline-block;
   border-radius: 4px;
   border: 1px solid #3b8070;
@@ -48,5 +74,5 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
-}
+} */
 </style>
