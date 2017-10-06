@@ -39,8 +39,8 @@ module.exports = {
   ** Plugins
   */
   modules: [
-    ['@nuxtjs/google-tag-manager', { id: 'GTM-KBV6KJR' }],
-  ]
+    ['@nuxtjs/google-tag-manager', { id: 'GTM-KBV6KJR' }]
+  ],
   /*
   ** Build configuration
   */
