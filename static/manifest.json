@@ -1,5 +1,6 @@
 {
     "name": "Bolsas",
+    "short_name": "Bolsas",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",

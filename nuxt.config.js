@@ -3,6 +3,9 @@ module.exports = {
   ** Headers of the page
   */
   head: {
+    htmlAttrs: {
+      lang: 'pt-br'
+    },
     title: 'Programa de Bolsas - IDEPead e UNIFRAN',
     meta: [
       { charset: 'utf-8' },
@@ -39,7 +42,8 @@ module.exports = {
   ** Plugins
   */
   modules: [
-    ['@nuxtjs/google-tag-manager', { id: 'GTM-KBV6KJR' }]
+    ['@nuxtjs/google-tag-manager', { id: 'GTM-KBV6KJR' }],
+    ['@nuxtjs/pwa', { icon: false, manifest: false, meta: false }]
   ],
   /*
   ** Build configuration
