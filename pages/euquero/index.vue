@@ -1,5 +1,5 @@
 <template lang='pug'>
-  article.container.article--content OI
+  article.container.article--content Eu quero!
 </template>
 
 <script>
