@@ -1,5 +1,7 @@
 <template lang='pug'>
-  article.container.article--content Eu quero!
+  article.container.article--content
+    header.article--header
+      h1.article-title Eu quero!
 </template>
 
 <script>
