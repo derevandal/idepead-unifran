@@ -49,7 +49,7 @@
     flex-wrap wrap
   .navigation--item
     width 50%
-@media (max-width: 300px)
+@media (max-width: 450px)
   .navigation--list
     flex-direction column
   .navigation--item
