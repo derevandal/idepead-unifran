@@ -6,7 +6,7 @@ module.exports = {
     htmlAttrs: {
       lang: 'pt-br'
     },
-    title: 'Programa de Bolsas - IDEPead e UNIFRAN',
+    titleTemplate: '%s - IDEPead e UNIFRAN',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
