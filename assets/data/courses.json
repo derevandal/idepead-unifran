@@ -1,9 +1,354 @@
 [
-  {
-    "name": "Administração",
-    "slug": "administracao",
-    "type": "bacharel",
-    "time": 8,
-    "price": "205,00"
-  }
+	{
+		"name": "Administração",
+		"slug": "administracao",
+		"type": "bacharel",
+		"time": 8,
+		"priceFull": "387,00",
+		"priceOff": "205,00"
+	},
+	{
+		"name": "Ciências Contabéis",
+		"slug": "ciencias-contabeis",
+		"type": "bacharel",
+		"time": 8,
+		"priceFull": "387,00",
+		"priceOff": "205,00"
+	},
+	{
+		"name": "Ciências Econômicas",
+		"slug": "ciencias-economicas",
+		"type": "bacharel",
+		"time": 8,
+		"priceFull": "387,00",
+		"priceOff": "205,00"
+	},
+	{
+		"name": "Engenharia Ambiental",
+		"slug": "engenharia-ambiental",
+		"type": "bacharel",
+		"time": 10,
+		"priceFull": "554,00",
+		"priceOff": "293,00"
+	},
+	{
+		"name": "Engenharia de Produção",
+		"slug": "engenharia-produção",
+		"type": "bacharel",
+		"time": 10,
+		"priceFull": "554,00",
+		"priceOff": "293,00"
+	},
+	{
+		"name": "Artes Visuais",
+		"slug": "artes-visuais",
+		"type": "licenciatura",
+		"time": 6,
+		"priceFull": "342,00",
+		"priceOff": "181,00"
+	},
+	{
+		"name": "Filosofia",
+		"slug": "filosofia",
+		"type": "licenciatura",
+		"time": 6,
+		"priceFull": "342,00",
+		"priceOff": "181,00"
+	},
+	{
+		"name": "Geografia",
+		"slug": "geografia",
+		"type": "licenciatura",
+		"time": 6,
+		"priceFull": "342,00",
+		"priceOff": "181,00"
+	},
+	{
+		"name": "História",
+		"slug": "Historia",
+		"type": "licenciatura",
+		"time": 6,
+		"priceFull": "342,00",
+		"priceOff": "181,00"
+	},
+	{
+		"name": "Letras - Português e Espanhol",
+		"slug": "letras-portugues-espanhol",
+		"type": "licenciatura",
+		"time": 8,
+		"priceFull": "342,00",
+		"priceOff": "181,00"
+	},
+	{
+		"name": "Letras - Português e Inglês",
+		"slug": "letras-portugues-ingles",
+		"type": "licenciatura",
+		"time": 6,
+		"priceFull": "348,00",
+		"priceOff": "185,00"
+	},
+	{
+		"name": "Matemática",
+		"slug": "matematica",
+		"type": "licenciatura",
+		"time": 6,
+		"priceFull": "342,00",
+		"priceOff": "181,00"
+	},
+	{
+		"name": "Física",
+		"slug": "fisica",
+		"type": "licenciatura",
+		"time": 8,
+		"priceFull": "342,00",
+		"priceOff": "181,00"
+	},
+	{
+		"name": "Química",
+		"slug": "quimica",
+		"type": "licenciatura",
+		"time": 8,
+		"priceFull": "342,00",
+		"priceOff": "181,00"
+	},
+	{
+		"name": "Teologia",
+		"slug": "teologia",
+		"type": "licenciatura",
+		"time": 6,
+		"priceFull": "342,00",
+		"priceOff": "181,00"
+	},
+	{
+		"name": "Pedagogia",
+		"slug": "pedagogia",
+		"type": "licenciatura",
+		"time": 6,
+		"priceFull": "348,00",
+		"priceOff": "185,00"
+	},
+	{
+		"name": "Biologia - P/ não Licenciados",
+		"slug": "biologia-nao-licenciados",
+		"type": "licenciatura",
+		"time": 2,
+		"priceFull": "342,00",
+		"priceOff": "181,00"
+	},
+	{
+		"name": "Física - P/ não Licenciados",
+		"slug": "fisica-nao-licenciados",
+		"type": "licenciatura",
+		"time": 2,
+		"priceFull": "342,00",
+		"priceOff": "181,00"
+	},
+	{
+		"name": "Geografia - P/ não Licenciados",
+		"slug": "geografaia-nao-licenciados",
+		"type": "licenciatura",
+		"time": 2,
+		"priceFull": "342,00",
+		"priceOff": "181,00"
+	},
+	{
+		"name": "História - P/ não Licenciados",
+		"slug": "historia-nao-licenciados",
+		"type": "licenciatura",
+		"time": 2,
+		"priceFull": "342,00",
+		"priceOff": "181,00"
+	},
+	{
+		"name": "Matemática - P/ não Licenciados",
+		"slug": "matematica-nao-licenciados",
+		"type": "licenciatura",
+		"time": 2,
+		"priceFull": "342,00",
+		"priceOff": "181,00"
+	},
+	{
+		"name": "Português - P/ não Licenciados",
+		"slug": "portugues-nao-licenciados",
+		"type": "licenciatura",
+		"time": 2,
+		"priceFull": "342,00",
+		"priceOff": "181,00"
+	},
+	{
+		"name": "Química - P/ não Licenciados",
+		"slug": "quimica-nao-licenciados",
+		"type": "licenciatura",
+		"time": 2,
+		"priceFull": "342,00",
+		"priceOff": "181,00"
+	},
+	{
+		"name": "Ciências Sociais",
+		"slug": "ciencias-sociais",
+		"type": "licenciatura",
+		"time": 6,
+		"priceFull": "387,00",
+		"priceOff": "205,00"
+	},
+	{
+		"name": "Serviço Social",
+		"slug": "serviço-social",
+		"type": "bacharel",
+		"time": 8,
+		"priceFull": "387,00",
+		"priceOff": "205,00"
+	},
+	{
+		"name": "Gestão Ambiental",
+		"slug": "gestao-amibiental",
+		"type": "tecnólogo",
+		"time": 8,
+		"priceFull": "342,00",
+		"priceOff": "181,00"
+	},
+	{
+		"name": "Banco de Dados",
+		"slug": "banco-dados",
+		"type": "tecnólogo",
+		"time": 4,
+		"priceFull": "342,00",
+		"priceOff": "181,00"
+	},
+	{
+		"name": "Gestão de Agronegócios",
+		"slug": "gestao-agronegocios",
+		"type": "tecnólogo",
+		"time": 6,
+		"priceFull": "342,00",
+		"priceOff": "181,00"
+	},
+	{
+		"name": "Gestão Hospitalar",
+		"slug": "gestao-hospitalar",
+		"type": "tecnólogo",
+		"time": 6,
+		"priceFull": "342,00",
+		"priceOff": "181,00"
+	},
+	{
+		"name": "Segurança Privada",
+		"slug": "segurança-privada",
+		"type": "tecnólogo",
+		"time": 4,
+		"priceFull": "264,00",
+		"priceOff": "140,00"
+	},
+	{
+		"name": "Gastronomia",
+		"slug": "gastronomia",
+		"type": "tecnólogo",
+		"time": 4,
+		"priceFull": "554,00",
+		"priceOff": "293,00"
+	},
+	{
+		"name": "Gestão Comercial",
+		"slug": "gestao-comercial",
+		"type": "tecnólogo",
+		"time": 4,
+		"priceFull": "342,00",
+		"priceOff": "181,00"
+	},
+	{
+		"name": "Gestão da Qualidade",
+		"slug": "gestao-qualidade",
+		"type": "tecnólogo",
+		"time": 4,
+		"priceFull": "342,00",
+		"priceOff": "181,00"
+	},
+	{
+		"name": "Gestão da Tecnologia da TI",
+		"slug": "gestao-tecnologia-TI",
+		"type": "tecnólogo",
+		"time": 4,
+		"priceFull": "348,00",
+		"priceOff": "185,00"
+	},
+	{
+		"name": "Gestão de Comércio Exterior",
+		"slug": "gestao-comercio-exterior",
+		"type": "tecnólogo",
+		"time": 4,
+		"priceFull": "342,00",
+		"priceOff": "181,00"
+	},
+	{
+		"name": "Gestão Financeira",
+		"slug": "gestao-financeira",
+		"type": "tecnólogo",
+		"time": 4,
+		"priceFull": "342,00",
+		"priceOff": "181,00"
+	},
+	{
+		"name": "Gestão Pública",
+		"slug": "gestao-publica",
+		"type": "tecnólogo",
+		"time": 4,
+		"priceFull": "342,00",
+		"priceOff": "181,00"
+	},
+	{
+		"name": "Logística",
+		"slug": "logistica",
+		"type": "tecnólogo",
+		"time": 4,
+		"priceFull": "342,00",
+		"priceOff": "181,00"
+	},
+	{
+		"name": "Marketing",
+		"slug": "marketing",
+		"type": "tecnólogo",
+		"time": 4,
+		"priceFull": "342,00",
+		"priceOff": "181,00"
+	},
+	{
+		"name": "Processos Gerenciais",
+		"slug": "processos-gerenciais",
+		"type": "tecnólogo",
+		"time": 4,
+		"priceFull": "342,00",
+		"priceOff": "181,00"
+	},
+	{
+		"name": "Recursos Humanos",
+		"slug": "recursos-humanos",
+		"type": "tecnólogo",
+		"time": 4,
+		"priceFull": "342,00",
+		"priceOff": "181,00"
+	},
+	{
+		"name": "Secretariado",
+		"slug": "secretariado",
+		"type": "tecnólogo",
+		"time": 4,
+		"priceFull": "342,00",
+		"priceOff": "181,00"
+	},
+	{
+		"name": "Análise e Desenvolvimento de Sistemas",
+		"slug": "analise-desenvolvimento-sistemas",
+		"type": "tecnólogo",
+		"time": 4,
+		"priceFull": "342,00",
+		"priceOff": "181,00"
+	},
+	{
+		"name": "Segurança no Trabalho",
+		"slug": "segurança-no-trabalho",
+		"type": "tecnólogo",
+		"time": 4,
+		"priceFull": "342,00",
+		"priceOff": "181,00"
+	}
 ]
