@@ -7,6 +7,7 @@ Vue.use(Vuex)
 
 const store = () => new Vuex.Store({
   state: {
+    baseDomain: 'https://unifran.idepead.com.br',
     courses
   },
   getters: {
