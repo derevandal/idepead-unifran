@@ -1,11 +1,11 @@
 <template lang='pug'>
   div
-    p no slug
+    p {{ slug }}
 </template>
 
 <script>
   export default {
-    name: 'eu-quero-no-slug',
+    name: 'euquero-with-slug',
     components: {
     },
     data () {
