@@ -20,17 +20,17 @@
 </template>
 
 <script>
-// import sectionHeader from '~/components/sectionHeader.vue'
-// import sectionFooter from '~/components/sectionFooter.vue'
-// import articleContent from '~/components/articleContent.vue'
-
-// export default {
-//   components: {
-//     sectionHeader,
-//     sectionFooter,
-//     articleContent
-//   }
-// }
+export default {
+  name: 'programa-de-bolsas',
+  head () {
+    return {
+      title: 'Programa de Bolsas',
+      link: [
+        { rel: 'canonical', content: `${this.$store.state.baseDomain}/` }
+      ]
+    }
+  }
+}
 </script>
 
 <style lang='stylus' >
@@ -56,4 +56,11 @@
   flex-direction column
   justify-content flex-start
   font-size 1.5em
+@media (max-width: 600px)
+  .article--content
+    padding 2rem 3rem
+    font-size 1.4em
+@media (max-width: 450px)
+  .article--content
+    padding .5rem 1.5rem
 </style>
