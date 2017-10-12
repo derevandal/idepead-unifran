@@ -1,12 +1,14 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import courses from '~/assets/data/courses.json'
+
 // import axios from 'axios'
 
 Vue.use(Vuex)
 
 const store = () => new Vuex.Store({
   state: {
+    searchWord: null,
     baseDomain: 'https://unifran.idepead.com.br',
     course: {},
     filteredCourses: null,
@@ -16,6 +18,8 @@ const store = () => new Vuex.Store({
     allCourses: (state) => state.courses,
 
     getCourse: (state) => state.course,
+
+    getSearchWord: (state) => state.searchWord,
 
     filteredCourse: (state) => {
       console.log(state.filteredCourses)
@@ -28,6 +32,7 @@ const store = () => new Vuex.Store({
     },
     FILTERED_COURSES (state, word) {
       try {
+        state.searchWord = word
         word = word.toLowerCase()
         if (word === '{}') {
           state.filteredCourses = word

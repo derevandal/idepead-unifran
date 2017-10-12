@@ -12,29 +12,6 @@
       return {
         slug: null
       }
-    },
-    head () {
-      return {
-        title: 'Eu quero!'
-      }
-    },
-    created () {
-      this.getSlug()
-    },
-    watch: {
-      '$route': 'getSlug'
-    },
-    methods: {
-      getSlug () {
-        try {
-          this.slug = this.$route.params.slug
-          if (this.slug) {
-            this.baseUrl = `${this.$store.state.baseDomain}/${this.$route.params.slug}`
-          }
-        } catch (e) {
-          return 'Slug not found'
-        }
-      }
     }
   }
 </script>

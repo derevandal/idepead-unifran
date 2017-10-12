@@ -4,7 +4,7 @@
       h1.article-title Cursos
     .article--content.container
       .form-group
-        input(type="text" v-model="search" required)
+        input(type="search" :value="searchWord" @input="updateSearch" required)
         label.control-label(for="input") Qual curso procura?
         i.bar
       ul.article--list.container.article--list--container
@@ -19,7 +19,7 @@ export default {
   name: 'cursos',
   data () {
     return {
-      searchWord: null
+      searchWord: this.$store.getters.searchWord
     }
   },
   computed: {
@@ -36,15 +36,19 @@ export default {
       } catch (e) {
         console.log(e)
       }
-    },
-    search: {
-      get () {
-        return this.searchWord
-      },
-      set (word) {
-        this.searchWord = word
-        this.$store.commit('FILTERED_COURSES', word)
-      }
+    }
+    // search: {
+    //   get () {
+    //     return this.$store.getters.searchWord
+    //   },
+    //   set (word) {
+    //     this.$store.dispatch('FILTERED_COURSES', word)
+    //   }
+    // }
+  },
+  methods: {
+    updateSearch (e) {
+      this.$store.dispatch('FILTERED_COURSES', e.target.value)
     }
   },
   head () {
