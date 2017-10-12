@@ -8,19 +8,37 @@ Vue.use(Vuex)
 const store = () => new Vuex.Store({
   state: {
     baseDomain: 'https://unifran.idepead.com.br',
+    course: {},
+    filteredCourses: null,
     courses
   },
   getters: {
     allCourses: (state) => state.courses,
 
-    filterByType: (state) => (type) => {
-      return state.courses.find(course => course.type === type)
+    getCourse: (state) => state.course,
+
+    filteredCourse: (state) => {
+      console.log(state.filteredCourses)
+      return state.filteredCourses
     }
   },
   mutations: {
-    // SET_TODOS (state, todos) {
-    //   state.todos = todos
-    // },
+    SET_COURSE (state, course) {
+      state.course = course
+    },
+    FILTERED_COURSES (state, word) {
+      try {
+        word = word.toLowerCase()
+        if (word === '{}') {
+          state.filteredCourses = word
+        }
+        state.filteredCourses = state.courses.filter((course) => {
+          return course.slug.toLowerCase().includes(word) || course.name.toLowerCase().includes(word) || course.type.toLowerCase().includes(word)
+        })
+      } catch (e) {
+        return state.courses
+      }
+    }
     // ADD_TODO (state, todo) {
     //   state.todos.push(todo)
     // },
@@ -38,9 +56,12 @@ const store = () => new Vuex.Store({
     // addTodo ({ commit }, todo) {
     //   commit('ADD_TODO', todo)
     // },
-    // setTodos ({ commit }, todos) {
-    //   commit('SET_TODOS', todos)
-    // },
+    SET_COURSE ({ commit }, course) {
+      commit('SET_COURSE', course)
+    },
+    FILTERED_COURSES ({ commit }, word) {
+      commit('FILTERED_COURSES', word)
+    }
     // removeTodo ({ commit }, todo) {
     //   commit('REMOVE_TODO', todo)
     // },

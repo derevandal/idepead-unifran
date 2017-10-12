@@ -19,19 +19,32 @@ export default {
   name: 'cursos',
   data () {
     return {
-      search: null
+      searchWord: null
     }
   },
   computed: {
+    // getName: () => {
+    //   try {
+    //     return 'name'
+    //   } catch (e) {
+    //     return ''
+    //   }
+    // },
     filteredCourses () {
-      if (this.search) {
-        let searchValue = this.search.toLowerCase()
-        const filtered = this.$store.getters.allCourses.filter((course) => {
-          return course.slug.includes(searchValue) || course.name.includes(searchValue) || course.type.includes(searchValue)
-        })
-        return filtered
+      try {
+        return (this.$store.getters.filteredCourse || this.$store.getters.allCourses)
+      } catch (e) {
+        console.log(e)
       }
-      return this.$store.getters.allCourses
+    },
+    search: {
+      get () {
+        return this.searchWord
+      },
+      set (word) {
+        this.searchWord = word
+        this.$store.commit('FILTERED_COURSES', word)
+      }
     }
   },
   head () {
