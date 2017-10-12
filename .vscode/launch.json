@@ -22,7 +22,7 @@
       "type": "node",
       "request": "launch",
       "name": "Launch Program",
-      "program": "${workspaceRoot}/start"
+      "program": "${workspaceRoot}/"
     },
     {
       "type": "node",
