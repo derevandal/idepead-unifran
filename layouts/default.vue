@@ -17,6 +17,14 @@ export default {
     appHeader,
     appNavigation,
     appFooter
+  },
+  head () {
+    return {
+      title: this.$store.getters.getTitle,
+      link: [
+        { rel: 'canonical', content: this.$store.getters.getFullDomain }
+      ]
+    }
   }
 }
 </script>

@@ -6,11 +6,16 @@
 <script>
   export default {
     name: 'eu-quero-no-slug',
-    components: {
+    created () {
+      this.setPage()
     },
-    data () {
-      return {
-        slug: null
+    watch: {
+      '$route': 'setPage'
+    },
+    methods: {
+      setPage () {
+        this.$store.dispatch('SET_DOMAIN', '/euquero')
+        this.$store.dispatch('SET_TITLE', 'Eu quero!')
       }
     }
   }

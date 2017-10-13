@@ -26,26 +26,37 @@ const removerAcentos = (string) => {
 
 const store = () => new Vuex.Store({
   state: {
-    baseDomain: 'https://unifran.idepead.com.br',
+    domain: {
+      base: 'https://unifran.idepead.com.br',
+      params: '/'
+    },
+    seo: {
+      title: 'Programa de Bolsas'
+    },
     courses,
     searchWord: null,
     filteredCourses: null,
-    course: null
+    filteredCourse: null
   },
   getters: {
-    allCourses: (state) => state.courses,
 
-    getCourse: (state) => state.course,
+    getFullDomain: (state) => (state.domain.base + state.domain.params),
+
+    getTitle: (state) => state.seo.title,
+
+    allCourses: (state) => state.courses,
 
     getSearchWord: (state) => state.searchWord,
 
-    getFilteredCourses: (state) => state.filteredCourses
+    getFilteredCourses: (state) => state.filteredCourses,
+
+    getFilteredCourse: (state) => state.filteredCourse
   },
   mutations: {
     SET_COURSE (state, course) {
       state.course = course
     },
-    FILTERED_COURSES (state, word) {
+    FILTER_COURSES (state, word) {
       if (!(word) || word === '{}') {
         state.searchWord = null
         state.filteredCourses = null
@@ -53,17 +64,40 @@ const store = () => new Vuex.Store({
         state.searchWord = word
         word = removerAcentos(word.trim().toLowerCase())
         state.filteredCourses = state.courses.filter((course) => {
-          return course.slug.toLowerCase().includes(word) || course.name.toLowerCase().includes(word) || course.type.toLowerCase().includes(word)
+          return course.slug.includes(word) || course.name.toLowerCase().includes(word) || course.type.includes(word)
         })
       }
+    },
+    FILTERCOURSES_BY_SLUG (state, slug) {
+      slug = slug.trim().toLowerCase()
+      state.filteredCourse = Object.assign({}, ...state.courses.filter((course) => {
+        if (course.slug === slug) {
+          return course
+        }
+      }))
+    },
+    SET_DOMAIN (state, params) {
+      state.domain.params = params
+    },
+    SET_TITLE (state, title) {
+      state.seo.title = title
     }
   },
   actions: {
     SET_COURSE ({ commit }, course) {
       commit('SET_COURSE', course)
     },
-    FILTERED_COURSES ({ commit }, word) {
-      commit('FILTERED_COURSES', word)
+    FILTER_COURSES ({ commit }, word) {
+      commit('FILTER_COURSES', word)
+    },
+    FILTERCOURSES_BY_SLUG ({ commit }, slug) {
+      commit('FILTERCOURSES_BY_SLUG', slug)
+    },
+    SET_DOMAIN ({ commit }, domain) {
+      commit('SET_DOMAIN', domain)
+    },
+    SET_TITLE ({ commit }, title) {
+      commit('SET_TITLE', title)
     }
   }
 })

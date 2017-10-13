@@ -9,7 +9,7 @@
         i.bar
       ul.article--list.container.article--list--container
         li.article--item(v-for="course in filteredCourses" :key="course.slug")
-           a.article--link(:href="'/euquero/' + course.slug" :title="'Graduação em' + course.name" :alt="'Graduação em' + course.name") {{ course.name }}
+           nuxt-link.article--link(:to="'/euquero/' + course.slug" :title="'Graduação em ' + course.name" :alt="'Graduação em ' + course.name") {{ course.name }}
     footer.article-footer.container
       nuxt-link(to="/euquero/").navigation--link.invert Eu quero
 </template>
@@ -26,16 +26,20 @@ export default {
         return this.$store.state.searchWord
       },
       set (value) {
-        this.$store.dispatch('FILTERED_COURSES', value)
+        this.$store.dispatch('FILTER_COURSES', value)
       }
     }
   },
-  head () {
-    return {
-      title: 'Cursos',
-      link: [
-        { rel: 'canonical', content: `${this.$store.state.baseDomain}/${this.$options.name}` }
-      ]
+  created () {
+    this.setPage()
+  },
+  watch: {
+    '$route': 'setPage'
+  },
+  methods: {
+    setPage () {
+      this.$store.dispatch('SET_DOMAIN', '/cursos')
+      this.$store.dispatch('SET_TITLE', 'Cursos!')
     }
   }
 }

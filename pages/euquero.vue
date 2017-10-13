@@ -1,19 +1,22 @@
 <template lang='pug'>
   article.container.article--container
     header.article--header.container
-      h1.article-title Eu quero!
+      h1.article-title {{ pageName }}
     nuxt-child.article--content.container
 </template>
 
 <script>
 export default {
   name: 'euquero-index',
-  head () {
-    return {
-      title: 'Eu quero!',
-      link: [
-        { rel: 'canonical', content: `${this.$store.state.baseDomain}/` }
-      ]
+  computed: {
+    pageName () {
+      let pageName = 'Eu quero'
+      let course = this.$store.getters.getFilteredCourse
+      if (course && course.name) {
+        pageName += ' ' + course.name
+      }
+      pageName += '!'
+      return pageName
     }
   }
 }

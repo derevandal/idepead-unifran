@@ -14,18 +14,22 @@
 <script>
 export default {
   name: 'metodologia',
-  head () {
-    return {
-      title: 'Metodologia',
-      link: [
-        { rel: 'canonical', content: `${this.$store.state.baseDomain}/${this.$options.name}` }
-      ]
+  created () {
+    this.setPage()
+  },
+  watch: {
+    '$route': 'setPage'
+  },
+  methods: {
+    setPage () {
+      this.$store.dispatch('SET_DOMAIN', '/metodologia')
+      this.$store.dispatch('SET_TITLE', 'Metodologia!')
     }
   }
 }
 </script>
 
-<style lang='stylus' >
+<style lang='stylus'scoped >
 .article--container
   flex-direction column
 .article--header

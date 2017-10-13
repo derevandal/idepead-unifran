@@ -1,52 +1,36 @@
 <template lang='pug'>
   div
-    p
-      li.article--item(v-for="course in filteredCourse" :key="course.slug")
-        a.article--link(:href="'/euquero/' + course.slug" :title="'Graduação em' + course.name" :alt="'Graduação em' + course.name") {{ course.name }}
+    p slug
 
 </template>
 
 <script>
   export default {
     name: 'euquero-with-slug',
-    components: {
-    },
     data () {
       return {
         slug: null
       }
     },
-    head () {
-      return {
-        title: 'Eu quero!'
-      }
-    },
     created () {
-      this.getSlug()
+      this.initSlug()
     },
     watch: {
-      '$route': 'getSlug'
+      '$route': 'initSlug'
     },
-    computed: {
-      filteredCourse () {
-        try {
-          return (this.$store.getters.filteredCourse)
-        } catch (e) {
-          console.log(e)
+    methods: {
+      initSlug () {
+        this.slug = this.$route.params.slug.trim()
+        if (this.slug) {
+          this.$store.dispatch('FILTERCOURSES_BY_SLUG', this.slug)
+          this.$store.dispatch('SET_DOMAIN', '/euquero/' + this.slug)
+          this.$store.dispatch('SET_TITLE', 'Eu quero ' + this.getCourseName + '!')
         }
       }
     },
-    methods: {
-      getSlug () {
-        try {
-          this.slug = this.$route.params.slug
-          if (this.slug) {
-            this.$store.commit('FILTERED_COURSES', this.slug)
-            this.baseUrl = `${this.$store.state.baseDomain}/${this.$route.params.slug}`
-          }
-        } catch (e) {
-          return 'Slug not found'
-        }
+    computed: {
+      getCourseName () {
+        return this.$store.getters.getFilteredCourse.name || ''
       }
     }
   }

@@ -22,12 +22,16 @@
 <script>
 export default {
   name: 'programa-de-bolsas',
-  head () {
-    return {
-      title: 'Programa de Bolsas',
-      link: [
-        { rel: 'canonical', content: `${this.$store.state.baseDomain}/` }
-      ]
+  created () {
+    this.setPage()
+  },
+  watch: {
+    '$route': 'setPage'
+  },
+  methods: {
+    setPage () {
+      this.$store.dispatch('SET_DOMAIN', '/')
+      this.$store.dispatch('SET_TITLE', 'Programa de Bolsas')
     }
   }
 }
