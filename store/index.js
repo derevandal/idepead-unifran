@@ -6,13 +6,31 @@ import courses from '~/assets/data/courses.json'
 
 Vue.use(Vuex)
 
+const removerAcentos = (string) => {
+  const mapaAcentosHex = {
+    a: /[\xE0-\xE6]/g,
+    e: /[\xE8-\xEB]/g,
+    i: /[\xEC-\xEF]/g,
+    o: /[\xF2-\xF6]/g,
+    u: /[\xF9-\xFC]/g,
+    c: /\xE7/g
+  }
+
+  for (let letra in mapaAcentosHex) {
+    var expressaoRegular = mapaAcentosHex[letra]
+    string = string.replace(expressaoRegular, letra)
+  }
+
+  return string
+}
+
 const store = () => new Vuex.Store({
   state: {
-    searchWord: null,
     baseDomain: 'https://unifran.idepead.com.br',
-    course: {},
+    courses,
+    searchWord: null,
     filteredCourses: null,
-    courses
+    course: null
   },
   getters: {
     allCourses: (state) => state.courses,
@@ -21,65 +39,32 @@ const store = () => new Vuex.Store({
 
     getSearchWord: (state) => state.searchWord,
 
-    filteredCourse: (state) => {
-      console.log(state.filteredCourses)
-      return state.filteredCourses
-    }
+    getFilteredCourses: (state) => state.filteredCourses
   },
   mutations: {
     SET_COURSE (state, course) {
       state.course = course
     },
     FILTERED_COURSES (state, word) {
-      try {
+      if (!(word) || word === '{}') {
+        state.searchWord = null
+        state.filteredCourses = null
+      } else {
         state.searchWord = word
-        word = word.toLowerCase()
-        if (word === '{}') {
-          state.filteredCourses = word
-        }
+        word = removerAcentos(word.trim().toLowerCase())
         state.filteredCourses = state.courses.filter((course) => {
           return course.slug.toLowerCase().includes(word) || course.name.toLowerCase().includes(word) || course.type.toLowerCase().includes(word)
         })
-      } catch (e) {
-        return state.courses
       }
     }
-    // ADD_TODO (state, todo) {
-    //   state.todos.push(todo)
-    // },
-    // REMOVE_TODO (state, todo) {
-    //   var i = state.todos.indexOf(todo)
-    //   state.todos.splice(i, 1)
-    // },
-    // FILTER_TODOS (state, value) {
-    //   state.courses.forEach((course) => {
-    //     course.type = !value
-    //   })
-    // }
   },
   actions: {
-    // addTodo ({ commit }, todo) {
-    //   commit('ADD_TODO', todo)
-    // },
     SET_COURSE ({ commit }, course) {
       commit('SET_COURSE', course)
     },
     FILTERED_COURSES ({ commit }, word) {
       commit('FILTERED_COURSES', word)
     }
-    // removeTodo ({ commit }, todo) {
-    //   commit('REMOVE_TODO', todo)
-    // },
-    // allDone ({ state, commit }) {
-    //   var value = state.todos.filter(todo => todo.completed).length === state.todos.length
-    //   commit('FILTER_TODOS', value)
-    // },
-    // saveTodos ({ state }) {
-    //   axios.put('/api/todos', { todos: state.todos })
-    // },
-    // nuxtServerInit ({ commit }, { req }) {
-    //   commit('SET_TODOS', req.session.todos || [])
-    // }
   }
 })
 
