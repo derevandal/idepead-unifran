@@ -31,7 +31,8 @@ const store = () => new Vuex.Store({
       params: '/'
     },
     seo: {
-      title: 'Programa de Bolsas'
+      title: 'Programa de Bolsas',
+      description: 'Inicie sua graduação aproveitando o Programa de Bolsas oferecido pelo IDEPead em conjunto com a UNIFRAN.'
     },
     courses,
     searchWord: null,
@@ -43,6 +44,8 @@ const store = () => new Vuex.Store({
     getFullDomain: (state) => (state.domain.base + state.domain.params),
 
     getTitle: (state) => state.seo.title,
+
+    getFullDescription: (state) => state.seo.getFullDescription,
 
     allCourses: (state) => state.courses,
 

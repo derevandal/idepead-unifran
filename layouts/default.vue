@@ -23,6 +23,21 @@ export default {
       title: this.$store.getters.getTitle,
       link: [
         { rel: 'canonical', content: this.$store.getters.getFullDomain }
+      ],
+      meta: [
+        { name: 'description', content: this.$store.getters.getFullDescription },
+        { name: 'twitter:card', content: 'summary' },
+        { name: 'twitter:site', content: '@idepead' },
+        { name: 'twitter:title', content: this.$store.getters.getTitle },
+        { name: 'twitter:description', content: this.$store.getters.getFullDescription },
+        { name: 'twitter:creator', content: '@idepead' },
+        { name: 'twitter:image', content: '~assets/images/unifran_og.jpg' },
+        { name: 'og:title', content: this.$store.getters.getTitle },
+        { name: 'og:type', content: 'article' },
+        { name: 'og:url', content: this.$store.getters.getFullDomain },
+        { name: 'og:description', content: this.$store.getters.getFullDescription },
+        { name: 'og:site_name', content: 'Programa de Bolsas - IDEPead e UNIFRAN' },
+        { name: 'fb:admins', content: '264917726946702' }
       ]
     }
   }
