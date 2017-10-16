@@ -43,7 +43,8 @@ module.exports = {
   */
   modules: [
     ['@nuxtjs/google-tag-manager', { id: 'GTM-KBV6KJR' }],
-    ['@nuxtjs/pwa', { icon: false, manifest: false, meta: false }]
+    ['@nuxtjs/pwa', { icon: false, manifest: false, meta: false }],
+    '@nuxtjs/vuetify'
   ],
   /*
   ** Build configuration
