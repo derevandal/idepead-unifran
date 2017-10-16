@@ -23,7 +23,7 @@ export default {
   methods: {
     setPage () {
       this.$store.dispatch('SET_DOMAIN', '/metodologia')
-      this.$store.dispatch('SET_TITLE', 'Metodologia!')
+      this.$store.dispatch('SET_TITLE', 'Metodologia')
     }
   }
 }
@@ -34,7 +34,7 @@ export default {
   flex-direction column
 .article--header
   height 200px
-  background url("~/assets/images/unifra-bolsa.png")
+  background url("~/assets/images/unifran_bolsa.jpg")
 
   background-color #fff
   background-position top center
