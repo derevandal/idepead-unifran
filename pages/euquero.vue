@@ -114,6 +114,17 @@ fieldset
     padding-top: ($mf-spacer * 2)
     margin-top: -1*$mf-font-size
 .form-group
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus
+  input:-webkit-autofill,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus
+    background-color red !important
   input
     height: ($mf-font-size * 1.9)
   textarea
@@ -122,7 +133,7 @@ fieldset
     width: 100%
     font-size: $mf-font-size
     height: ($mf-font-size * 1.6)
-    padding: $mf-spacer $mf-spacer $mf-spacer / 2
+    padding: $mf-spacer $mf-spacer ($mf-spacer / 2)
     background: none
     border: none
     line-height: 1.6
@@ -139,7 +150,7 @@ fieldset
     transition: all $mf-transition-speed ease
   .bar
     position: relative
-    border-bottom: $mf-font-size / 16 solid $mf-border-color
+    border-bottom: ($mf-font-size / 16) solid $mf-border-color
     display: block
     &::before
       content: ''
@@ -155,7 +166,7 @@ fieldset
 	textarea
     display: block
     background: none
-    padding: $mf-spacer $mf-spacer $mf-spacer / 2
+    padding: $mf-spacer $mf-spacer ($mf-spacer / 2)
     font-size: $mf-font-size
     border-width: 0
     border-color: transparent
@@ -275,7 +286,7 @@ fieldset
       top: ($mf-font-size * 0.65)
       left: ($mf-font-size * 0.38)
       transform: rotate(-135deg)
-      box-shadow: 0 0 0 $mf-font-size / 16 $body-bg
+      box-shadow: 0 0 0 ($mf-font-size / 16) $body-bg
     &::after
       top: ($mf-font-size * 0.3)
       left: 0
