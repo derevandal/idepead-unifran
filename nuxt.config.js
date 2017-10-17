@@ -24,6 +24,9 @@ module.exports = {
       { rel: 'manifest', href: '/manifest.json' },
       { rel: 'mask-icon', href: '/safari-pinned-tab1.svg', color: '#e53249' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:400,700' }
+    ],
+    script: [
+      { src: 'https://www.google.com/recaptcha/api.js?render=explicit', async: true, defer: true }
     ]
   },
   /*
