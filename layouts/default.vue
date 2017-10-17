@@ -22,22 +22,22 @@ export default {
     return {
       title: this.$store.getters.getTitle,
       link: [
-        { rel: 'canonical', content: this.$store.getters.getFullDomain }
+        { hid: 'canonical', rel: 'canonical', content: this.$store.getters.getFullDomain }
       ],
       meta: [
-        { name: 'description', content: this.$store.getters.getFullDescription },
-        { name: 'twitter:card', content: 'summary' },
-        { name: 'twitter:site', content: '@idepead' },
-        { name: 'twitter:title', content: this.$store.getters.getTitle },
-        { name: 'twitter:description', content: this.$store.getters.getFullDescription },
-        { name: 'twitter:creator', content: '@idepead' },
-        { name: 'twitter:image', content: '~assets/images/unifran_og.jpg' },
-        { name: 'og:title', content: this.$store.getters.getTitle },
-        { name: 'og:type', content: 'article' },
-        { name: 'og:url', content: this.$store.getters.getFullDomain },
-        { name: 'og:description', content: this.$store.getters.getFullDescription },
-        { name: 'og:site_name', content: 'Programa de Bolsas - IDEPead e UNIFRAN' },
-        { name: 'fb:admins', content: '264917726946702' }
+        { hid: 'description', name: 'description', content: this.$store.getters.getFullDescription },
+        { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
+        { hid: 'twitter:site', name: 'twitter:site', content: '@idepead' },
+        { hid: 'twitter:title', name: 'twitter:title', content: this.$store.getters.getTitle },
+        { hid: 'twitter:description', name: 'twitter:description', content: this.$store.getters.getFullDescription },
+        { hid: 'twitter:creator', name: 'twitter:creator', content: '@idepead' },
+        { hid: 'twitter:image', name: 'twitter:image', content: '~assets/images/unifran_og.jpg' },
+        { hid: 'og:title', name: 'og:title', content: this.$store.getters.getTitle },
+        { hid: 'og:type', name: 'og:type', content: 'article' },
+        { hid: 'og:url', name: 'og:url', content: this.$store.getters.getFullDomain },
+        { hid: 'og:description', name: 'og:description', content: this.$store.getters.getFullDescription },
+        { hid: 'og:site_name', name: 'og:site_name', content: 'Programa de Bolsas - IDEPead e UNIFRAN' },
+        { hid: 'fb:admins', name: 'fb:admins', content: '264917726946702' }
       ]
     }
   }
