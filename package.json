@@ -17,7 +17,8 @@
   "dependencies": {
     "@nuxtjs/pwa": "^1.0.2",
     "axios": "^0.16.2",
-    "nuxt": "^1.0.0-rc11"
+    "nuxt": "^1.0.0-rc11",
+    "vue-recaptcha": "^0.4.0"
   },
   "devDependencies": {
     "@nuxtjs/google-tag-manager": "^1.0.1",
