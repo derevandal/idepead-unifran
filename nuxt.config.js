@@ -10,7 +10,6 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Programa de Bolsas - IDEPead e UNIFRAN' },
       { name: 'apple-mobile-web-app-title', content: 'Bolsas' },
       { name: 'application-name', content: 'Bolsas' },
       { name: 'msapplication-TileColor', content: '#2d4c72' },
@@ -41,6 +40,13 @@ module.exports = {
   /*
   ** Plugins
   */
+  plugins: [
+    '~/plugins/vee-validate',
+    '~/plugins/vue-mask'
+  ],
+  /*
+  ** Modules
+  */
   modules: [
     ['@nuxtjs/google-tag-manager', { id: 'GTM-KBV6KJR' }],
     ['@nuxtjs/pwa', { icon: false, manifest: false, meta: false }]
@@ -49,6 +55,7 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    vendor: ['axios'],
     /*
     ** Run ESLint on save
     */
