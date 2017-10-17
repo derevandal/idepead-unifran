@@ -29,7 +29,7 @@
           i.helper
           | Desejo que entrem em contato comigo
         p.text-danger(v-if="errors.has('checkbox')") Aí não tem como, né?
-      vue-recaptcha(@verify="onVerify" ref="recaptcha" @expired="onExpired" sitekey="6LcByCkUAAAAANP8hb69eqCiJPnGEaarsg_98AXe")
+      vue-recaptcha(@verify="onVerify" ref="recaptcha" @expired="onExpired" sitekey="6LeYzzQUAAAAAN7F9yPhnzQX-aSicOfWMeTvWnu8")
       .button-container
         button.button(type="submit"): span Enviar
     div(v-else)
